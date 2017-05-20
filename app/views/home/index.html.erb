@@ -1,3 +1,4 @@
 <div class="grid">
   <%= render "grid" %>
 </div>
+<%= link_to "Start", "/game/#{@game.id}", {class: "start", remote: true} %>

@@ -14,15 +14,35 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(function () {
-    // will call refreshPartial every 3 seconds
-    setInterval(refreshPartial, 1000)
 
+// $(document).ready(function () {
+//   $(document).on("click", ".start", function(){
+//     link = this.getAttribute('href');
+//     setInterval(refreshPartial(link), 1000)
+//   })
+// });
+//
+// function refreshPartial(link) {
+//   console.log(link);
+//
+//   $.ajax({
+//     url: link
+//   })
+// }
+
+$(document).ready(function() {
+  $(document).on("click", ".start", function(){
+    debugger;
+    var currentUrl = $(this).attr("href");
+
+    // Given that we're at a url like 'users/:id', this saves the unique id of the user whose show page we are currently looking at
+    var gameID = currentUrl.substr(currentUrl.lastIndexOf('/') + 1);
+
+    setInterval(function() {
+      $.ajax({
+        type: "GET",
+        url: "/game/" + gameID
+      });
+    }, 3000);
+  })
 });
-
-// calls action refreshing the partial
-function refreshPartial() {
-  $.ajax({
-    url: "/"
- })
-}
