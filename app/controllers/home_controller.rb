@@ -21,7 +21,7 @@ class HomeController < ApplicationController
     create_x_values
     create_y_values
     @i = 0
-    100.times do
+    625.times do
       living = [true, false].sample
       cell = @game.cells.create(x: @x_values[@i], y: @y_values[@i], living: living)
       @i += 1
@@ -31,15 +31,15 @@ class HomeController < ApplicationController
 
   def create_x_values
     @x_values = []
-    10.times do
-      (1..10).map { |i| @x_values.push(i) }
+    25.times do
+      (1..25).map { |i| @x_values.push(i) }
     end
   end
 
   def create_y_values
     @y_values = []
-    (1..10).each do |i|
-      10.times do
+    (1..25).each do |i|
+      25.times do
         @y_values.push(i)
       end
     end

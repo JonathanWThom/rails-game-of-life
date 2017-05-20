@@ -14,6 +14,9 @@ class Game < ActiveRecord::Base
       end
     end
 
+    # Cell.where("future_living_state = ?", false).update_all(living: false)
+    # Cell.where("future_living_state = ?", true).update_all(living: true)
+
     cells.each do |cell|
       cell.update(living: cell.future_living_state)
       cell.update(future_living_state: nil)
