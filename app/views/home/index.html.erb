@@ -2,3 +2,5 @@
   <%= render "grid" %>
 </div>
 <%= link_to "Start", "/game/#{@game.id}", {class: "start", remote: true} %>
+
+<%= react_component('Game', {cells: @game.cells.to_json}) %>

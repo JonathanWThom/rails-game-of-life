@@ -3,6 +3,10 @@ class HomeController < ApplicationController
 
   def index
     create_game
+    # json.cells(@game.cells) do |cell|
+    #   json.extract! cell, :x, :y, :living, :future_living_state
+    #   json.url cell_url(cell, format: :json)
+    # end
   end
   ## need a new route or controller to start game
 
