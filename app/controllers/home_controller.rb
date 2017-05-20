@@ -6,5 +6,11 @@ class HomeController < ApplicationController
       cell = Cell.new(living)
       @cells.push(cell)
     end
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
+
   end
 end

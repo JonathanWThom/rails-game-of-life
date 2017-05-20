@@ -1,11 +1,3 @@
 <div class="grid">
-  <% @cells.each do |cell| %>
-    <% if cell.living %>
-      <div class="cell living"></div>
-    <% else %>
-      <div class="cell"></div>
-    <% end %>
-  <% end %>
+  <%= render "grid" %>
 </div>
-
-<!-- determine new lines via grid set up -->
