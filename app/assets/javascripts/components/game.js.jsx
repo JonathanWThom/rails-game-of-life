@@ -4,11 +4,18 @@ var Game = React.createClass({
   },
 
   render: function() {
+    var cells = JSON.parse(this.props.cells);
+
+    var cellsList = cells.map(function(cell){
+      return <p key={cell.id}>{cell.living}</p>;
+    })
+
+    console.log(cellsList);
+
     return (
       <div>
-        <div>Cells: {this.props.cells}</div>
+        <div>Cells: {cellsList}</div>
       </div>
     );
   }
 });
-
